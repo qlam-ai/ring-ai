@@ -6,27 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXContainerItemProxy section */
-		81303AF02D3412C70099892D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 81303AD72D3412C60099892D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 81303ADE2D3412C60099892D;
-			remoteInfo = "ring-ai";
-		};
-		81303AFA2D3412C70099892D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 81303AD72D3412C60099892D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 81303ADE2D3412C60099892D;
-			remoteInfo = "ring-ai";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		81303ADF2D3412C60099892D /* ring-ai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ring-ai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81303AEF2D3412C70099892D /* ring-aiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ring-aiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81303AF92D3412C70099892D /* ring-aiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ring-aiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -35,34 +16,10 @@
 			path = "ring-ai";
 			sourceTree = "<group>";
 		};
-		81303AF22D3412C70099892D /* ring-aiTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "ring-aiTests";
-			sourceTree = "<group>";
-		};
-		81303AFC2D3412C70099892D /* ring-aiUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "ring-aiUITests";
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		81303ADC2D3412C60099892D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		81303AEC2D3412C70099892D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		81303AF62D3412C70099892D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,8 +33,6 @@
 			isa = PBXGroup;
 			children = (
 				81303AE12D3412C60099892D /* ring-ai */,
-				81303AF22D3412C70099892D /* ring-aiTests */,
-				81303AFC2D3412C70099892D /* ring-aiUITests */,
 				81303AE02D3412C60099892D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,8 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				81303ADF2D3412C60099892D /* ring-ai.app */,
-				81303AEF2D3412C70099892D /* ring-aiTests.xctest */,
-				81303AF92D3412C70099892D /* ring-aiUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,52 +70,6 @@
 			productReference = 81303ADF2D3412C60099892D /* ring-ai.app */;
 			productType = "com.apple.product-type.application";
 		};
-		81303AEE2D3412C70099892D /* ring-aiTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 81303B062D3412C70099892D /* Build configuration list for PBXNativeTarget "ring-aiTests" */;
-			buildPhases = (
-				81303AEB2D3412C70099892D /* Sources */,
-				81303AEC2D3412C70099892D /* Frameworks */,
-				81303AED2D3412C70099892D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				81303AF12D3412C70099892D /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				81303AF22D3412C70099892D /* ring-aiTests */,
-			);
-			name = "ring-aiTests";
-			packageProductDependencies = (
-			);
-			productName = "ring-aiTests";
-			productReference = 81303AEF2D3412C70099892D /* ring-aiTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		81303AF82D3412C70099892D /* ring-aiUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 81303B092D3412C70099892D /* Build configuration list for PBXNativeTarget "ring-aiUITests" */;
-			buildPhases = (
-				81303AF52D3412C70099892D /* Sources */,
-				81303AF62D3412C70099892D /* Frameworks */,
-				81303AF72D3412C70099892D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				81303AFB2D3412C70099892D /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				81303AFC2D3412C70099892D /* ring-aiUITests */,
-			);
-			name = "ring-aiUITests";
-			packageProductDependencies = (
-			);
-			productName = "ring-aiUITests";
-			productReference = 81303AF92D3412C70099892D /* ring-aiUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -175,14 +82,6 @@
 				TargetAttributes = {
 					81303ADE2D3412C60099892D = {
 						CreatedOnToolsVersion = 16.2;
-					};
-					81303AEE2D3412C70099892D = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = 81303ADE2D3412C60099892D;
-					};
-					81303AF82D3412C70099892D = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = 81303ADE2D3412C60099892D;
 					};
 				};
 			};
@@ -201,28 +100,12 @@
 			projectRoot = "";
 			targets = (
 				81303ADE2D3412C60099892D /* ring-ai */,
-				81303AEE2D3412C70099892D /* ring-aiTests */,
-				81303AF82D3412C70099892D /* ring-aiUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		81303ADD2D3412C60099892D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		81303AED2D3412C70099892D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		81303AF72D3412C70099892D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -239,34 +122,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		81303AEB2D3412C70099892D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		81303AF52D3412C70099892D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		81303AF12D3412C70099892D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 81303ADE2D3412C60099892D /* ring-ai */;
-			targetProxy = 81303AF02D3412C70099892D /* PBXContainerItemProxy */;
-		};
-		81303AFB2D3412C70099892D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 81303ADE2D3412C60099892D /* ring-ai */;
-			targetProxy = 81303AFA2D3412C70099892D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		81303B012D3412C70099892D /* Debug */ = {
@@ -396,19 +252,23 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ring-ai/Preview Content\"";
+				DEVELOPMENT_TEAM = VH58526Z37;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app requires Bluetooth access to discover and connect to nearby devices.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "This app requires Bluetooth access to discover and connect to nearby devices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "sofyanajridi.ring-ai";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sofyanajridi.ring-ai";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -424,91 +284,27 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ring-ai/Preview Content\"";
+				DEVELOPMENT_TEAM = VH58526Z37;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app requires Bluetooth access to discover and connect to nearby devices.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "This app requires Bluetooth access to discover and connect to nearby devices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "sofyanajridi.ring-ai";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sofyanajridi.ring-ai";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		81303B072D3412C70099892D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "sofyanajridi.ring-aiTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ring-ai.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ring-ai";
-			};
-			name = Debug;
-		};
-		81303B082D3412C70099892D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "sofyanajridi.ring-aiTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ring-ai.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ring-ai";
-			};
-			name = Release;
-		};
-		81303B0A2D3412C70099892D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "sofyanajridi.ring-aiUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "ring-ai";
-			};
-			name = Debug;
-		};
-		81303B0B2D3412C70099892D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "sofyanajridi.ring-aiUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "ring-ai";
 			};
 			name = Release;
 		};
@@ -529,24 +325,6 @@
 			buildConfigurations = (
 				81303B042D3412C70099892D /* Debug */,
 				81303B052D3412C70099892D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		81303B062D3412C70099892D /* Build configuration list for PBXNativeTarget "ring-aiTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				81303B072D3412C70099892D /* Debug */,
-				81303B082D3412C70099892D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		81303B092D3412C70099892D /* Build configuration list for PBXNativeTarget "ring-aiUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				81303B0A2D3412C70099892D /* Debug */,
-				81303B0B2D3412C70099892D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
