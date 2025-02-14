@@ -11,7 +11,6 @@ struct ContentView: View {
     @StateObject private var ringViewModel = RingSearchViewModel()
     
     var body: some View {
-        
         NavigationStack {
             VStack {
                 Image("qlam")
@@ -20,10 +19,10 @@ struct ContentView: View {
                     .imageScale(.small)
                     .foregroundStyle(.tint)
                 
-                
                 Text(ringViewModel.statusMessage)
                     .font(.headline)
                     .padding()
+                
                 Button {
                     ringViewModel.searchForDevice()
                 } label: {
@@ -39,38 +38,31 @@ struct ContentView: View {
                 }
                 
                 if !ringViewModel.discoveredDevices.isEmpty {
-                                    Text("Discovered Devices:")
-                                        .font(.headline)
-                                        .padding(.top)
-                                    
-                                    List(ringViewModel.discoveredDevices, id: \.identifier) { device in
-                                        VStack(alignment: .leading) {
-                                            Text(device.name ?? "Unknown Device")
-                                                .font(.body)
-                                                .fontWeight(.semibold)
-                                            Text("UUID: \(device.identifier.uuidString)")
-                                                .font(.caption)
-                                                .foregroundColor(.gray)
-                                        }
-                                    }
-                                }
-                                
-                                Spacer()
+                    Text("Discovered Devices:")
+                        .font(.headline)
+                        .padding(.top)
+                    
+                    List(ringViewModel.discoveredDevices, id: \.identifier) { device in
+                        VStack(alignment: .leading) {
+                            Text(device.name ?? "Unknown Device")
+                                .font(.body)
+                                .fontWeight(.semibold)
+                            Text("UUID: \(device.identifier.uuidString)")
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                        }
+                    }
+                }
                 
-                
-                
+                Spacer()
             }
             .padding()
-            .navigationDestination(isPresented: $ringViewModel.isConnected){
-                DeviceFoundView(deviceName: ringViewModel.deviceName, batteryStatus: ringViewModel.batteryLevel, steps: ringViewModel.todaySteps)
+            .navigationDestination(isPresented: $ringViewModel.isConnected) {
+                DeviceFoundView(viewModel: ringViewModel)
             }
         }
-        
     }
-    
 }
-    
-    
 
 #Preview {
     ContentView()
