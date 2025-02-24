@@ -86,12 +86,12 @@ class RingSearchViewModel: NSObject, ObservableObject, CBCentralManagerDelegate,
             discoveredDevices.append(peripheral)
         }
 
-        if deviceName == "R02_5C07" {
+        if deviceName == "R02_9406" {
             self.isSearching = false
-            self.statusMessage = "Found R02_5C07"
+            self.statusMessage = "Found R02_9406"
             self.deviceFound = true
             self.centralManager.stopScan()
-            self.deviceName = "R02_5C07"
+            self.deviceName = "R02_9406"
             
             self.connectedPeripheral = peripheral
             peripheral.delegate = self
