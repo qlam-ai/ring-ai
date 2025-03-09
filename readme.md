@@ -43,6 +43,8 @@ To try the app yourself, you'll need:
 - A Colmi R02 ring
 - Xcode for building and deploying the app
 
+Just clone this repository, adapt the code to your liking, and build to your device.
+
 ---
 
 
