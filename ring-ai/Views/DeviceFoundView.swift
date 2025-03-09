@@ -61,7 +61,7 @@ struct DeviceFoundView: View {
                         .padding(.horizontal, 20)
                     }
                     
-                    NavigationLink(destination: AI_SummaryView()) {
+                    NavigationLink(destination: AISummaryView()) {
                         HStack {
                             Image(systemName: "brain.head.profile")
                                 .font(.title)
@@ -352,24 +352,6 @@ struct HealthTrackingView: View {
     }
 }
 
-struct AI_SummaryView: View {
-    var body: some View {
-        VStack {
-            Text("AI Summary")
-                .font(.title)
-                .bold()
-                .padding(.top, 20)
-            
-            Spacer()
-            Text("AI Summary content will be here.")
-                .font(.body)
-                .foregroundColor(.gray)
-            Spacer()
-        }
-        .navigationTitle("AI Summary")
-        .navigationBarTitleDisplayMode(.inline)
-    }
-}
 
 struct MetricBox: View {
     var title: String

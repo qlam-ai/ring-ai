@@ -102,6 +102,8 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				81814BC12D5914540012E140 /* XCRemoteSwiftPackageReference "AAChartKit-Swift" */,
+				81814BC42D624A260012E140 /* XCRemoteSwiftPackageReference "LLM" */,
+				8127AAA92D624EF900366DA3 /* XCRemoteSwiftPackageReference "llama" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 81303AE02D3412C60099892D /* Products */;
@@ -341,12 +343,28 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8127AAA92D624EF900366DA3 /* XCRemoteSwiftPackageReference "llama" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ggerganov/llama.cpp";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		81814BC12D5914540012E140 /* XCRemoteSwiftPackageReference "AAChartKit-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AAChartModel/AAChartKit-Swift.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 9.1.0;
+			};
+		};
+		81814BC42D624A260012E140 /* XCRemoteSwiftPackageReference "LLM" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/eastriverlee/LLM.swift/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
