@@ -18,7 +18,7 @@ Converting Tahnok's Python implementation to Swift enabled direct communication 
 - Translating the ring's data protocols to Swift
 - Creating a clean, intuitive UI for data visualization
 
-The BLE implementation proved challenging, especially given my lack of experience and the limited documentation for Swift's BLE library. Fortunately, I found excellent resources in [Adafruit's guide](https://cdn-learn.adafruit.com/downloads/pdf/build-a-bluetooth-app-using-swift-5.pdf) and [this Medium article](https://medium.com/@bhumitapanara/ble-bluetooth-low-energy-with-ios-swift-7ef0de0dff78), which helped jumpstart the development process.
+The BLE implementation proved challenging, especially given my lack of experience and the limited documentation for Swift's BLE library. Fortunately, I found excellent resources in [Adafruit's guide](https://cdn-learn.adafruit.com/downloads/pdf/build-a-bluetooth-app-using-swift-5.pdf) and [this Medium article](https://medium.com/@bhumitapanara/ble-bluetooth-low-energy-with-ios-swift-7ef0de0dff78), which helped jumpstart the development process (Thanks to Claude as well!).
 
 The only downside is that developing without a paid Apple developer account means the app expires every 7 days, requiring weekly re-provisioning. While this works for my personal use case, it's frustrating that Apple restricts how long self-developed apps can remain active on your own device. It seems counterintuitive that we can't control the lifespan of apps we build for our personal use.
 
