@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var ringViewModel = RingSearchViewModel()
+    @StateObject private var ringSearchVM = RingSearchViewModel()
     
     var body: some View {
         NavigationStack {
@@ -19,30 +19,30 @@ struct ContentView: View {
                     .imageScale(.small)
                     .foregroundStyle(.tint)
                 
-                Text(ringViewModel.statusMessage)
+                Text(ringSearchVM.statusMessage)
                     .font(.headline)
                     .padding()
                 
                 Button {
-                    ringViewModel.searchForDevice()
+                    ringSearchVM.searchForDevice()
                 } label: {
                     Text("Search for Ring Device")
                         .multilineTextAlignment(.center)
                 }
-                .disabled(ringViewModel.isSearching)
+                .disabled(ringSearchVM.isSearching)
                 .padding()
                 .buttonStyle(.borderedProminent)
                 
-                if ringViewModel.isSearching {
+                if ringSearchVM.isSearching {
                     ProgressView()
                 }
                 
-                if !ringViewModel.discoveredDevices.isEmpty {
+                if !ringSearchVM.discoveredDevices.isEmpty {
                     Text("Discovered Devices:")
                         .font(.headline)
                         .padding(.top)
                     
-                    List(ringViewModel.discoveredDevices, id: \.identifier) { device in
+                    List(ringSearchVM.discoveredDevices, id: \.identifier) { device in
                         VStack(alignment: .leading) {
                             Text(device.name ?? "Unknown Device")
                                 .font(.body)
@@ -57,8 +57,8 @@ struct ContentView: View {
                 Spacer()
             }
             .padding()
-            .navigationDestination(isPresented: $ringViewModel.isConnected) {
-                DeviceFoundView(viewModel: ringViewModel)
+            .navigationDestination(isPresented: $ringSearchVM.isConnected) {
+                DeviceFoundView(viewModel: ringSearchVM)
             }
         }
     }

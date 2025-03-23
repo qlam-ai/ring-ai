@@ -33,6 +33,15 @@ The interface maintains a minimalist design with two core functions:
 1. **Daily Stats View**: Monitor current metrics and review weekly data
 2. **AI Summary View**: Receive AI-generated health trend analysis
 
+### Screenshots
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+    <img src="images/1.png" width="200" alt="Home Screen">
+    <img src="images/2.png" width="200" alt="Device Found View">
+    <img src="images/3.png" width="200" alt="Health Tracking View">
+    <img src="images/4.png" width="200" alt="AI Summary View">
+</div>
+
 While it may not offer all the features of premium devices, it provides a solid foundation for basic health tracking without subscription fees—and might inspire you to build your own solution!
 
 ## Getting Started
@@ -42,6 +51,20 @@ To try the app yourself, you'll need:
 - An iPhone running iOS 14 or later
 - A Colmi R02 ring
 - Xcode for building and deploying the app
+- Azure OpenAI API credentials
+
+### Setting up Azure OpenAI credentials
+
+1. Open Xcode
+2. Click on your project name in the toolbar (next to the play button)
+3. Select "Edit Scheme..."
+4. In the scheme editor, select "Run" from the left sidebar
+5. Select the "Arguments" tab
+6. Under "Environment Variables", click the "+" button
+7. Add the following variables:
+   - OPENAI_API_KEY = your_api_key_here
+   - OPENAI_ENDPOINT = your_endpoint_here
+   - OPENAI_DEPLOYMENT_NAME = your_deployment_name_here
 
 Just clone this repository, adapt the code to your liking, and build to your device.
 

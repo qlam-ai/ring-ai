@@ -61,7 +61,7 @@ struct DeviceFoundView: View {
                         .padding(.horizontal, 20)
                     }
                     
-                    NavigationLink(destination: AISummaryView()) {
+                    NavigationLink(destination: AISummaryView(ringViewModel: viewModel)) {
                         HStack {
                             Image(systemName: "brain.head.profile")
                                 .font(.title)

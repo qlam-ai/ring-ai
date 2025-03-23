@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ring_aiApp: App {
+    @StateObject private var ringSearchVM = RingSearchViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(ringSearchVM)
         }
     }
 }
