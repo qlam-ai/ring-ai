@@ -36,10 +36,10 @@ The interface maintains a minimalist design with two core functions:
 ### Screenshots
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-    <img src="images/1.png" width="200" alt="Home Screen">
-    <img src="images/2.png" width="200" alt="Device Found View">
-    <img src="images/3.png" width="200" alt="Health Tracking View">
-    <img src="images/4.png" width="200" alt="AI Summary View">
+    <img src="images/1.PNG" width="200" alt="Home Screen">
+    <img src="images/2.PNG" width="200" alt="Device Found View">
+    <img src="images/3.PNG" width="200" alt="Health Tracking View">
+    <img src="images/4.PNG" width="200" alt="AI Summary View">
 </div>
 
 While it may not offer all the features of premium devices, it provides a solid foundation for basic health tracking without subscription fees—and might inspire you to build your own solution!
