@@ -9,7 +9,6 @@ import SwiftUI
 struct AISummaryView: View {
     @ObservedObject var ringViewModel: RingSearchViewModel
     @StateObject private var viewModel = AISummaryViewModel()
-    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 15) {
