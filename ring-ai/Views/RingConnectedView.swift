@@ -1,3 +1,9 @@
+//
+//  RingConnectedView.swift
+//  ring-ai
+//
+
+
 import SwiftUI
 
 struct RingConnectedView: View {
