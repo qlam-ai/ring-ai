@@ -9,10 +9,11 @@ import SwiftUI
 
 // Update NewRingView to use ActivityDetailView in the Activity tab
 struct NewRingView: View {
+    @ObservedObject var viewModel: RingSearchViewModel
     var body: some View {
         TabView {
             NavigationStack {
-                HealthView()
+                HealthView(viewModel: viewModel)
                     .navigationTitle("Health")
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
@@ -39,7 +40,7 @@ struct NewRingView: View {
             }
             
             NavigationStack {
-                ActivityDetailView()
+                ActivityDetailView(viewModel: viewModel)
                     .navigationTitle("Activity")
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
@@ -73,17 +74,10 @@ struct NewRingView: View {
 
 // New Activity Detail View matching the Oura-style design
 struct ActivityDetailView: View {
+    @ObservedObject var viewModel: RingSearchViewModel
     // Sample dates for the date selector
     let dates = ["Mon, Jan 8", "Tue, Jan 9", "Wed, Jan 10"]
     @State private var selectedDateIndex = 1
-    
-    // Sample data for the activity bars
-    let activityData: [(low: CGFloat, medium: CGFloat, high: CGFloat)] = [
-        (0.3, 0.5, 0.2), (0.2, 0.6, 0.1), (0.4, 0.4, 0.0),
-        (0.3, 0.6, 0.1), (0.4, 0.5, 0.0), (0.5, 0.4, 0.0),
-        (0.2, 0.6, 0.2), (0.3, 0.5, 0.0), (0.4, 0.4, 0.0),
-        (0.3, 0.5, 0.0), (0.2, 0.6, 0.1), (0.3, 0.5, 0.1)
-    ]
     
     var body: some View {
         ScrollView {
@@ -116,11 +110,12 @@ struct ActivityDetailView: View {
                     
                     // Bar chart
                     HStack(alignment: .bottom, spacing: 8) {
-                        ForEach(0..<activityData.count, id: \.self) { index in
+                        // Use real data if available, otherwise fallback to sample
+                        ForEach(viewModel.stepsHistory.prefix(12).enumerated().map { $0 }, id: \.offset) { index, steps in
                             ActivityBar(
-                                lowHeight: activityData[index].low,
-                                mediumHeight: activityData[index].medium,
-                                highHeight: activityData[index].high
+                                lowHeight: CGFloat(steps) / 12000.0, // scale for demo
+                                mediumHeight: 0.3, // placeholder
+                                highHeight: 0.1 // placeholder
                             )
                         }
                     }
@@ -168,13 +163,13 @@ struct ActivityDetailView: View {
                 HStack(spacing: 16) {
                     ActivityStatCard(
                         title: "Goal progress",
-                        value: "335 / 300 Cal",
+                        value: "\(viewModel.todayCalories) / 300 Cal",
                         showChevron: true
                     )
                     
                     ActivityStatCard(
                         title: "Total burn",
-                        value: "1,909 Cal",
+                        value: "\(viewModel.todayCalories) Cal",
                         showChevron: true
                     )
                 }
@@ -184,20 +179,20 @@ struct ActivityDetailView: View {
                 HStack(spacing: 16) {
                     ActivityStatCard(
                         title: "Walking equivalency",
-                        value: "4.8 mi",
+                        value: String(format: "%.2f mi", Double(viewModel.todayDistance) / 1609.34),
                         showChevron: true
                     )
                     
                     ActivityStatCard(
                         title: "Steps",
-                        value: "9,393",
+                        value: "\(viewModel.todaySteps)",
                         showChevron: true
                     )
                 }
                 .padding(.horizontal)
                 
                 // Activity score
-                ActivityScoreCard(score: "100", status: "Optimal")
+                ActivityScoreCard(score: String(viewModel.todaySteps / 100), status: "Optimal")
                     .padding(.horizontal)
                 
                 // Activity contributors section
@@ -413,10 +408,11 @@ struct ActivityContributorCard: View {
 
 // Keep the rest of your previous implementation (HealthView, etc.)
 struct HealthView: View {
+    @ObservedObject var viewModel: RingSearchViewModel
     var body: some View {
         ScrollView {
             VStack(spacing: 16) {
-                ActivityCard()
+                ActivityCard(viewModel: viewModel)
                 SleepCard()
                 HeartRateCard()
             }
@@ -426,6 +422,7 @@ struct HealthView: View {
 }
 
 struct ActivityCard: View {
+    @ObservedObject var viewModel: RingSearchViewModel
     var body: some View {
         CardView(title: "Activity", date: nil) {
             ZStack {
@@ -446,7 +443,7 @@ struct ActivityCard: View {
                         .font(.system(size: 40))
                         .foregroundColor(.white)
                     
-                    Text("Please wear a smart ring to know your activities")
+                    Text("Steps: \(viewModel.todaySteps)")
                         .foregroundColor(.white)
                         .padding(.top, 8)
                 }
@@ -629,7 +626,7 @@ struct CardView<Content: View>: View {
 }
 
 #Preview {
-    NewRingView()
+    NewRingView(viewModel: RingSearchViewModel())
 }
 
 
