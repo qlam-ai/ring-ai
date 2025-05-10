@@ -33,6 +33,7 @@ struct NewRingView: View {
                             }
                         }
                     }
+                    .navigationBarBackButtonHidden(true)
             }
             .tabItem {
                 Image(systemName: "house.fill")
@@ -50,6 +51,7 @@ struct NewRingView: View {
                             }
                         }
                     }
+                    .navigationBarBackButtonHidden(true)
             }
             .tabItem {
                 Image(systemName: "bolt.fill")
