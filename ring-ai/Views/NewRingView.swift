@@ -77,19 +77,27 @@ struct NewRingView: View {
 // New Activity Detail View matching the Oura-style design
 struct ActivityDetailView: View {
     @ObservedObject var viewModel: RingSearchViewModel
-    // Sample dates for the date selector
-    let dates = ["Mon, Jan 8", "Tue, Jan 9", "Wed, Jan 10"]
-    @State private var selectedDateIndex = 1
+    // Use real Date objects for the date selector
+    let dateCount = 7
+    let calendar = Calendar.current
+    let today = Calendar.current.startOfDay(for: Date())
+    var dates: [Date] {
+        (0..<dateCount).map { calendar.date(byAdding: .day, value: -$0, to: today)! }.reversed()
+    }
+    @State private var selectedDateIndex = 6 // default to today (last in array)
     
     var body: some View {
         ScrollView {
             VStack(spacing: 16) {
                 // Date selector
-                HStack(spacing: 30) {
+                HStack(spacing: 8) {
                     ForEach(0..<dates.count, id: \.self) { index in
-                        DateTab(date: dates[index], isSelected: index == selectedDateIndex)
+                        let date = dates[index]
+                        let (dayStr, dateStr) = formattedDateParts(date)
+                        DateTab(day: dayStr, date: dateStr, isSelected: index == selectedDateIndex)
                             .onTapGesture {
                                 selectedDateIndex = index
+                                viewModel.fetchSportDetails(for: date)
                             }
                     }
                     
@@ -238,25 +246,43 @@ struct ActivityDetailView: View {
         }
         .background(Color.black)
     }
+    
+    // Helper to format date as two lines: day and date
+    func formattedDateParts(_ date: Date) -> (String, String) {
+        let dayFormatter = DateFormatter()
+        dayFormatter.dateFormat = "E"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "M/d"
+        return (dayFormatter.string(from: date), dateFormatter.string(from: date))
+    }
 }
 
 // Date selector tab
 struct DateTab: View {
+    let day: String
     let date: String
     let isSelected: Bool
     
     var body: some View {
-        VStack {
+        VStack(spacing: 2) {
+            Text(day)
+                .foregroundColor(isSelected ? .blue : .gray)
+                .font(.system(size: 16, weight: isSelected ? .bold : .regular))
+                .lineLimit(1)
             Text(date)
                 .foregroundColor(isSelected ? .blue : .gray)
-            
-            if isSelected {
-                Rectangle()
-                    .fill(Color.blue)
-                    .frame(height: 3)
-                    .offset(y: 4)
-            }
+                .font(.system(size: 14))
+                .lineLimit(1)
         }
+        .frame(width: 44)
+        .padding(.vertical, 4)
+        .background(Color.clear)
+        .overlay(
+            isSelected ? Rectangle()
+                .fill(Color.blue)
+                .frame(height: 3)
+                .offset(y: 16) : nil
+        )
     }
 }
 
@@ -420,6 +446,12 @@ struct HealthView: View {
             }
             .padding(.horizontal)
         }
+        .background(
+            Image("run.jpg") // Replace with your asset name
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
+        )
     }
 }
 
